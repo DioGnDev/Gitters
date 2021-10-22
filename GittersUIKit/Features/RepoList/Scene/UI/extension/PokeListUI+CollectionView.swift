@@ -22,10 +22,6 @@ extension PokeListUI: UICollectionViewDataSource {
       cell.data = ErrorData(imageName: "",
                             title: "Sorry",
                             message: "Repository not found")
-      cell.tapAction = { [unowned self] in
-        self.interactor?.fetchPokeList(param: self.param)
-      }
-      
       return cell
     }else {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell,
@@ -40,20 +36,20 @@ extension PokeListUI: UICollectionViewDataSource {
     
   }
   
-  func collectionView(_ collectionView: UICollectionView,
-                      viewForSupplementaryElementOfKind kind: String,
-                      at indexPath: IndexPath) -> UICollectionReusableView {
-    
-    guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
-                                                                     withReuseIdentifier: FooterView.identifier,
-                                                                     for: indexPath) as? FooterView
-    else { return UICollectionReusableView() }
-    
-    view.addSubview(loadingIndicator)
-    loadingIndicator.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 60)
-    
-    return view
-  }
+//  func collectionView(_ collectionView: UICollectionView,
+//                      viewForSupplementaryElementOfKind kind: String,
+//                      at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//    guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
+//                                                                     withReuseIdentifier: FooterView.identifier,
+//                                                                     for: indexPath) as? FooterView
+//    else { return UICollectionReusableView() }
+//
+//    view.addSubview(loadingIndicator)
+//    loadingIndicator.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 60)
+//    
+//    return view
+//  }
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,

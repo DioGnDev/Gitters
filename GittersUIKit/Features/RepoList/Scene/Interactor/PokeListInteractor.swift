@@ -81,13 +81,13 @@ class PokeListInteractor: PokeListInteractorLogic {
   func filterCards(searchText: String) {
     self.searchText = searchText
     filteredItems = self.lists.filter{ $0.repo.lowercased().contains(searchText.lowercased()) }
-    debug("filter", filteredItems)
     presenter?.presentPokeList()
   }
   
   func removeData() {
     lists = []
     isError = true
+    isLoading = false
     presenter?.presentPokeList()
   }
   

@@ -1,6 +1,5 @@
 //
 //  DetailCell.swift
-//  AjaibTest
 //
 //  Created by Ilham Hadi Prabawa on 10/19/21.
 //
@@ -19,13 +18,15 @@ class DetailInfoCell: UICollectionViewCell {
       nameLabel.text = item.name
       attackLabel.text = item.location
       subtypeLabel.text = item.company
+      flavorLabel.text = item.blog
       
-//      let attributedText = NSMutableAttributedString(string: "Flavor :", attributes: [
-//        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
-//        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
-//      ])
-//
-//      attributedText.append(NSAttributedString(string: "\n\"\(item.flavor)\"", attributes: [
+      let attributedString = NSMutableAttributedString(string: "Twitter:", attributes: [
+        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
+        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
+      ])
+
+      attributedString.addAttribute(.link, value: item.blog, range: NSRange())
+//      attributedString.append(NSAttributedString(string: "\n\"\(item.blog)\"", attributes: [
 //        NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 16),
 //        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
 //      ]))
@@ -116,4 +117,11 @@ class DetailInfoCell: UICollectionViewCell {
     super.updateConstraints()
   }
   
+}
+
+extension DetailInfoCell: UITextViewDelegate{
+  func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+    UIApplication.shared.open(URL, options: [:], completionHandler: nil)
+    return false
+  }
 }

@@ -1,6 +1,5 @@
 //
 //  ErrorCell.swift
-//  AjaibTest
 //
 //  Created by Ilham Hadi Prabawa on 10/20/21.
 //

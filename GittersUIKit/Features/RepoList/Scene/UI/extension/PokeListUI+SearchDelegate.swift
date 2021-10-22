@@ -27,9 +27,9 @@ extension PokeListUI: UISearchBarDelegate {
       self?.interactor?.fetchPokeList(param: self?.param)
     }
     
-    // Save the new work item and execute it after 300 ms
+    // Save the new work item and execute it after 200 ms
     pendingRequestWorkItem = requestWorkItem
-    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300),
+    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200),
                                   execute: requestWorkItem)
   }
   

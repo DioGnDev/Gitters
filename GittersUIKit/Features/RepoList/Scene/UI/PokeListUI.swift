@@ -33,13 +33,6 @@ class PokeListUI: UIViewController{
   
   var pendingRequestWorkItem: DispatchWorkItem?
   
-  lazy var searchController: UISearchController = {
-    let sc = UISearchController()
-    sc.searchBar.barStyle = .black
-    sc.searchBar.delegate = self
-    return sc
-  }()
-  
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -48,9 +41,9 @@ class PokeListUI: UIViewController{
     cv.backgroundColor = .backgroudColor
     cv.showsVerticalScrollIndicator = false
     cv.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
-    cv.register(FooterView.self,
-                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-                withReuseIdentifier: FooterView.identifier)
+//    cv.register(FooterView.self,
+//                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+//                withReuseIdentifier: FooterView.identifier)
     cv.register(ErrorCell.self, forCellWithReuseIdentifier: ErrorCell.identifier)
     //    cv.refreshControl = refreshControl
     return cv

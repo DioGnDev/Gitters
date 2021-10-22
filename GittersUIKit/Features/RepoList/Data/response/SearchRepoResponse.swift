@@ -58,7 +58,7 @@ struct Item: Codable {
     let hasIssues, hasProjects, hasDownloads, hasWiki: Bool?
     let hasPages: Bool?
     let forksCount: Int?
-    let mirrorURL: JSONNull?
+    let mirrorURL: String?
     let archived, disabled: Bool?
     let openIssuesCount: Int?
     let license: License?
@@ -66,7 +66,7 @@ struct Item: Codable {
     let topics: [String]?
     let visibility: Visibility?
     let forks, openIssues, watchers: Int?
-    let defaultBranch: DefaultBranch?
+    let defaultBranch: String?
     let score: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -144,11 +144,6 @@ struct Item: Codable {
         case defaultBranch = "default_branch"
         case score
     }
-}
-
-enum DefaultBranch: String, Codable {
-    case ghPages = "gh-pages"
-    case master = "master"
 }
 
 enum Key: String, Codable {
