@@ -45,7 +45,7 @@ struct UserRepoResponseElement: Codable {
     let hasIssues, hasProjects, hasDownloads, hasWiki: Bool?
     let hasPages: Bool?
     let forksCount: Int?
-    let mirrorURL: JSONNull?
+    let mirrorURL: String?
     let archived, disabled: Bool?
     let openIssuesCount: Int?
     let license: License?

@@ -25,9 +25,9 @@ struct RepoDetailResponse: Codable {
     let type: String?
     let siteAdmin: Bool?
     let name, company, blog, location: String?
-    let email: JSONNull?
+    let email: String?
     let hireable: Bool?
-    let bio: JSONNull?
+    let bio: String?
     let twitterUsername: String?
     let publicRepos, publicGists, followers, following: Int?
     let createdAt, updatedAt: String?

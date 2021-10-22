@@ -170,7 +170,7 @@ extension PokeDetailUI: UICollectionViewDataSource {
                                                                        for: indexPath) as? DefaultHeaderView
       else { return UICollectionReusableView() }
       
-      view.titleLabel.text = "Other Cards"
+      view.titleLabel.text = "User Repositories"
       
       return view
     }

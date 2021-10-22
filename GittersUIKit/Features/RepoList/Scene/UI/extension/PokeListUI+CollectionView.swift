@@ -19,9 +19,12 @@ extension PokeListUI: UICollectionViewDataSource {
     if interactor!.getCount() == 0 && !interactor!.isLoadingState() {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ErrorCell.identifier, for: indexPath) as? ErrorCell
       else { return UICollectionViewCell() }
-      cell.data = ErrorData(imageName: "",
-                            title: "Sorry",
-                            message: "Repository not found")
+      cell.data = ErrorData(imageName: "octo",
+                            title: "Search",
+                            message: "searching repository")
+      cell.tapAction = { [unowned self] in
+        self.interactor?.fetchPokeList(param: nil)
+      }
       return cell
     }else {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell,
@@ -36,20 +39,20 @@ extension PokeListUI: UICollectionViewDataSource {
     
   }
   
-//  func collectionView(_ collectionView: UICollectionView,
-//                      viewForSupplementaryElementOfKind kind: String,
-//                      at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//    guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
-//                                                                     withReuseIdentifier: FooterView.identifier,
-//                                                                     for: indexPath) as? FooterView
-//    else { return UICollectionReusableView() }
-//
-//    view.addSubview(loadingIndicator)
-//    loadingIndicator.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 60)
-//    
-//    return view
-//  }
+  //  func collectionView(_ collectionView: UICollectionView,
+  //                      viewForSupplementaryElementOfKind kind: String,
+  //                      at indexPath: IndexPath) -> UICollectionReusableView {
+  //
+  //    guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
+  //                                                                     withReuseIdentifier: FooterView.identifier,
+  //                                                                     for: indexPath) as? FooterView
+  //    else { return UICollectionReusableView() }
+  //
+  //    view.addSubview(loadingIndicator)
+  //    loadingIndicator.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 60)
+  //
+  //    return view
+  //  }
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,

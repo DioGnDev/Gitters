@@ -15,10 +15,13 @@ final class ErrorData: ErrorAttribute {
   
   var message: String = ""
   
-  init(imageName: String = "", title: String, message: String){
+  var buttonTitle: String?
+  
+  init(imageName: String = "", title: String, message: String, buttonTitle: String? = nil){
     self.imageName = imageName
     self.title = title
     self.message = message
+    self.buttonTitle = buttonTitle
   }
   
   deinit {
@@ -38,13 +41,19 @@ class ErrorCell: UICollectionViewCell {
   
   var tapAction: (() -> Void)?
   
-  var data: ErrorAttribute? {
+  var data: ErrorData? {
     didSet{
       guard let data = data else { return }
       imageView.image = UIImage(named: data.imageName ?? "")
       titleLabel.text = data.title
       descriptionLabel.text = data.message
-          
+      if let _ = data.buttonTitle {
+        let attributedString = NSAttributedString(string: data.buttonTitle ?? "",
+                                                  attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
+                                                               NSAttributedString.Key.foregroundColor: UIColor.red])
+        button.setAttributedTitle(attributedString, for: .normal)
+      }
+      
       layoutIfNeeded()
     }
   }
@@ -57,7 +66,7 @@ class ErrorCell: UICollectionViewCell {
   
   var titleLabel: UILabel = {
     let label = UILabel()
-    label.textColor = .white
+    label.textColor = .lightGray
     label.textAlignment = .center
     label.font = UIFont.boldSystemFont(ofSize: 20)
     return label
@@ -65,7 +74,7 @@ class ErrorCell: UICollectionViewCell {
   
   var descriptionLabel: UILabel = {
     let label = UILabel()
-    label.textColor = .white
+    label.textColor = .lightGray
     label.textAlignment = .center
     label.font = UIFont.systemFont(ofSize: 16)
     return label
@@ -74,10 +83,6 @@ class ErrorCell: UICollectionViewCell {
   lazy var button: UIButton = {
     let button = UIButton(type: .system)
     button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-    let attributedString = NSAttributedString(string: "Retry",
-                                              attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
-                                                           NSAttributedString.Key.foregroundColor: UIColor.red])
-    button.setAttributedTitle(attributedString, for: .normal)
     return button
   }()
   
@@ -124,12 +129,15 @@ class ErrorCell: UICollectionViewCell {
         make.trailing.equalTo(self).inset(16)
       }
       
-      button.snp.makeConstraints { make in
-        make.top.equalTo(descriptionLabel.snp.bottom).inset(-8)
-        make.size.equalTo(CGSize(width: 100, height: 30))
-        make.centerX.equalTo(self)
+      if let _ = data?.buttonTitle {
+        button.snp.makeConstraints { make in
+          make.top.equalTo(descriptionLabel.snp.bottom).inset(-8)
+          make.size.equalTo(CGSize(width: 100, height: 30))
+          make.centerX.equalTo(self)
+        }
+        
       }
-      
+    
       didSetupConstraints = true
     }
     
