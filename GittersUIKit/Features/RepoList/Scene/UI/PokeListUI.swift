@@ -70,7 +70,13 @@ class PokeListUI: UIViewController{
     return aci
   }()
   
-  lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 20))
+  lazy var searchBar: UISearchBar = {
+    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 20))
+    searchBar.barStyle = .black
+    searchBar.delegate = self
+    searchBar.placeholder = "Search Repository"
+    return searchBar
+  }()
   
   @objc
   func paginateMore() {
@@ -92,8 +98,6 @@ class PokeListUI: UIViewController{
     guard let navController = navigationController as? CustomNavigationController else { return }
     navController.tintColor = .white
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    
-    searchBar.placeholder = "Search Repository"
     let leftNavBarButton = UIBarButtonItem(customView: searchBar)
     self.navigationItem.leftBarButtonItem = leftNavBarButton
     
