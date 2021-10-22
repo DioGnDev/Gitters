@@ -51,6 +51,7 @@
 		E01D90A32722904300608E4A /* PokeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90952722904300608E4A /* PokeDetailInteractor.swift */; };
 		E01D90A42722904300608E4A /* RepoDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90982722904300608E4A /* RepoDetailResponse.swift */; };
 		E01D90A62722A43200608E4A /* UserRepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90A52722A43200608E4A /* UserRepoResponse.swift */; };
+		E01D90A92722D36D00608E4A /* SearchRepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		E01D90952722904300608E4A /* PokeDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailInteractor.swift; sourceTree = "<group>"; };
 		E01D90982722904300608E4A /* RepoDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailResponse.swift; sourceTree = "<group>"; };
 		E01D90A52722A43200608E4A /* UserRepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoResponse.swift; sourceTree = "<group>"; };
+		E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoResponse.swift; sourceTree = "<group>"; };
 		EBD83F5EFE05807D22953F53 /* Pods_GittersUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GittersUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				E01D90712722794800608E4A /* PokeListResponse.swift */,
+				E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			files = (
 				E01D907D2722794800608E4A /* PokeListModel.swift in Sources */,
 				E01D907F2722794800608E4A /* PokeListInteractor.swift in Sources */,
+				E01D90A92722D36D00608E4A /* SearchRepoResponse.swift in Sources */,
 				E01D90502722792700608E4A /* NetworkManager.swift in Sources */,
 				E01D90792722794800608E4A /* PokeListUI+CollectionView.swift in Sources */,
 				E01D909B2722904300608E4A /* RecommendationContinerCell.swift in Sources */,

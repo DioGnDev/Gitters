@@ -11,7 +11,6 @@ import UIKit
 extension PokeListUI: RepoListDisplayLogic {
   
   func displayPokeList(){
-    setupSearchController()
     loadingIndicator.stopAnimating()
     collectionView.reloadData()
     refreshControl.endRefreshing()

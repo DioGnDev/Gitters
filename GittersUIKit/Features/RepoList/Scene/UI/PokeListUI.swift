@@ -7,6 +7,8 @@ import Foundation
 import UIKit
 import SnapKit
 import Alamofire
+import RxCocoa
+import RxSwift
 
 protocol RepoListDisplayLogic: BaseDisplayLogic{
   func displayPokeList()
@@ -19,7 +21,7 @@ class PokeListUI: UIViewController{
   
   //dependency
   var interactor: PokeListInteractorLogic?
-
+  
   //state
   var param = PokeListModel.Request()
   
@@ -28,6 +30,8 @@ class PokeListUI: UIViewController{
   var didSetupConstraints = false
   
   let snackbar = Snackbar()
+  
+  var pendingRequestWorkItem: DispatchWorkItem?
   
   lazy var searchController: UISearchController = {
     let sc = UISearchController()
@@ -66,6 +70,8 @@ class PokeListUI: UIViewController{
     return aci
   }()
   
+  lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 20))
+  
   @objc
   func paginateMore() {
     refreshControl.beginRefreshing()
@@ -87,6 +93,10 @@ class PokeListUI: UIViewController{
     navController.tintColor = .white
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     
+    searchBar.placeholder = "Search Repository"
+    let leftNavBarButton = UIBarButtonItem(customView: searchBar)
+    self.navigationItem.leftBarButtonItem = leftNavBarButton
+    
   }
   
   override func viewDidLoad() {
@@ -94,6 +104,7 @@ class PokeListUI: UIViewController{
     
     self.view.backgroundColor = .white
     view.addSubview(collectionView)
+    searchBar.delegate = self
     
     updateViewConstraints()
     
@@ -110,10 +121,6 @@ class PokeListUI: UIViewController{
         break
       }
     }
-    
-    //request pokemon cards
-   
-    interactor?.fetchPokeList(param: nil)
     
   }
   
@@ -132,11 +139,6 @@ class PokeListUI: UIViewController{
   
   deinit{
     debug("deinit", String(describing: PokeListUI.self))
-  }
-  
-  func setupSearchController(){
-    navigationItem.searchController = searchController
-    navigationItem.hidesSearchBarWhenScrolling = false
   }
   
 }

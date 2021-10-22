@@ -11,6 +11,7 @@ protocol PokeListInteractorLogic: BaseInteractorLogic {
   func hasError() -> Bool
   func filterCards(searchText: String)
   func isLoadingState() -> Bool
+  func removeData()
 }
 
 class PokeListInteractor: PokeListInteractorLogic {
@@ -84,5 +85,10 @@ class PokeListInteractor: PokeListInteractorLogic {
     presenter?.presentPokeList()
   }
   
+  func removeData() {
+    lists = []
+    isError = true
+    presenter?.presentPokeList()
+  }
   
 }
