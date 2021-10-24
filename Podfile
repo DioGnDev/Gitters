@@ -9,7 +9,5 @@ target 'GittersUIKit' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.4'
   pod 'SDWebImage', '~> 5.0'
-  pod 'RxSwift', '6.2.0'
-  pod 'RxCocoa', '6.2.0'
   
 end

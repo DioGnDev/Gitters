@@ -7,12 +7,12 @@ import Foundation
 
 struct PokeDetailInjector{
   
-  static func inject(dependencyFor viewController: PokeDetailUI) {
+  static func inject(dependencyFor viewController: RepoDetailUI) {
     
-    let worker = PokeDetailRemoteDataSourceImpl(apiService: SceneModule.provideApiService())
+    let worker = RepoDetailRemoteDataSourceImpl(apiService: SceneModule.provideApiService())
     let interactor = PokeDetailInteractor(worker: worker, listWorker: SceneModule.provideListWorker())
     
-    let presenter = PokeDetailPresenter()
+    let presenter = RepoDetailPresenter()
     viewController.interactor = interactor
     interactor.presenter = presenter
     presenter.viewController = viewController

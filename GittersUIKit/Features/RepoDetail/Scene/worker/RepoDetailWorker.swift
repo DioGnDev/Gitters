@@ -9,7 +9,6 @@ import Alamofire
 protocol RepoDetailtRemoteDataSource {
   
   func fetchRepoDetail(id: String, completion: @escaping(Result<(RepoDetailModel, [RepositoryModel]), NError>) -> Void)
-  func fetchUserRepo(user: String, completion: @escaping(Result<[RepositoryModel], NError>) -> Void)
   
 }
 
@@ -93,28 +92,6 @@ class RepoDetailRemoteDataSourceImpl: RepoDetailtRemoteDataSource{
       
     }
     
-  }
-  
-  func fetchUserRepo(user: String, completion: @escaping (Result<[RepositoryModel], NError>) -> Void) {
-    
-    apiService.request(of: UserRepoResponse.self, with: "users/\(user)/repos") { result in
-      switch result {
-      case .failure(let error):
-        completion(.failure(error))
-        break
-      case .success(let response):
-        let repositories = response.map{ RepositoryModel(id: $0.id ?? 0,
-                                                         owner: $0.owner?.login ?? "",
-                                                         repo: $0.fullName ?? "",
-                                                         avatarURL: URL(string: $0.owner?.avatarURL ?? ""),
-                                                         url: URL(string: $0.url ?? ""),forkCount: $0.forksCount ?? 0,
-                                                         issueCount: $0.openIssuesCount ?? 0,
-                                                         watcherCount: $0.watchersCount ?? 0) }
-        completion(.success(repositories))
-        
-        break
-      }
-    }
   }
   
 }

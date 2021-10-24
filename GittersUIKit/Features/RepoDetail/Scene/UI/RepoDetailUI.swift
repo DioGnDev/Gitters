@@ -6,9 +6,8 @@
 import Foundation
 import UIKit
 
-protocol PokeDetailDisplayLogic: BaseDisplayLogic{
+protocol RepoDetailDisplayLogic: BaseDisplayLogic{
   func displayRepoDetail(viewModel: RepoDetailModel)
-  func displayRecommendationCards()
   func displayRepoDetail()
 }
 
@@ -94,15 +93,9 @@ class RepoDetailUI: UIViewController{
   
 }
 
-extension RepoDetailUI: PokeDetailDisplayLogic {
+extension RepoDetailUI: RepoDetailDisplayLogic {
   
   func displayRepoDetail(viewModel: RepoDetailModel) {
-    collectionView.reloadData()
-    guard let interactor = interactor, let owner = coordinator?.card?.owner else { return }
-    interactor.fetchRecommendationCards(user: owner, param: nil)
-  }
-  
-  func displayRecommendationCards() {
     collectionView.reloadData()
   }
   

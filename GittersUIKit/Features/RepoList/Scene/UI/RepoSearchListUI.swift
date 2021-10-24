@@ -7,8 +7,6 @@ import Foundation
 import UIKit
 import SnapKit
 import Alamofire
-import RxCocoa
-import RxSwift
 
 protocol RepoListDisplayLogic: BaseDisplayLogic{
   func displayPokeList()
@@ -20,10 +18,10 @@ class RepoSearchListUI: UIViewController{
   weak var coordinator: MainCoodinator?
   
   //dependency
-  var interactor: PokeListInteractorLogic?
+  var interactor: RepoSearchListInteractorLogic?
   
   //state
-  var param = PokeListModel.Request()
+  var param = RepoSearchListModel.Request()
   
   //MARK: - View
   

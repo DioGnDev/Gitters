@@ -1,6 +1,4 @@
 //
-//  PokeListRemoteDataSource.swift
-//  AjaibTest
 //
 //  Created by Ilham Hadi Prabawa on 10/18/21.
 
@@ -33,10 +31,13 @@ class RepoSearchListRemoteDataSourceImpl: PokeListRemoteDataSource{
         break
       case .success(let response):
         let repositories = response.items?.map{ RepositoryModel(id: $0.id ?? 0,
-                                                         owner: $0.owner?.login ?? "",
-                                                         repo: $0.name ?? "",
-                                                         avatarURL: URL(string: $0.owner?.avatarURL ?? ""),
-                                                         url: URL(string: $0.htmlURL ?? "")) } ?? []
+                                                                owner: $0.owner?.login ?? "",
+                                                                repo: $0.name ?? "",
+                                                                avatarURL: URL(string: $0.owner?.avatarURL ?? ""),
+                                                                url: URL(string: $0.htmlURL ?? ""),
+                                                                forkCount: $0.forksCount ?? 0,
+                                                                issueCount: $0.openIssuesCount ?? 0,
+                                                                watcherCount: $0.watchersCount ?? 0) } ?? []
         completion(.success(repositories))
         
         break

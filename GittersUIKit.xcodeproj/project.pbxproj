@@ -25,30 +25,30 @@
 		E01D90562722792700608E4A /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90472722792700608E4A /* ErrorCell.swift */; };
 		E01D90572722792700608E4A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90492722792700608E4A /* ApiService.swift */; };
 		E01D90582722792700608E4A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D904A2722792700608E4A /* CustomNavigationController.swift */; };
-		E01D90752722794800608E4A /* PokeListInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D905D2722794800608E4A /* PokeListInjector.swift */; };
+		E01D90752722794800608E4A /* RepoSearchListInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D905D2722794800608E4A /* RepoSearchListInjector.swift */; };
 		E01D90762722794800608E4A /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90602722794800608E4A /* CardCell.swift */; };
 		E01D90772722794800608E4A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90612722794800608E4A /* FooterView.swift */; };
-		E01D90782722794800608E4A /* PokeListUI+SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90632722794800608E4A /* PokeListUI+SearchDelegate.swift */; };
-		E01D90792722794800608E4A /* PokeListUI+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90642722794800608E4A /* PokeListUI+CollectionView.swift */; };
-		E01D907A2722794800608E4A /* PokeListUI+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90652722794800608E4A /* PokeListUI+Display.swift */; };
-		E01D907B2722794800608E4A /* PokeListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90662722794800608E4A /* PokeListUI.swift */; };
-		E01D907C2722794800608E4A /* PokeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90682722794800608E4A /* PokeListPresenter.swift */; };
-		E01D907D2722794800608E4A /* PokeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906A2722794800608E4A /* PokeListModel.swift */; };
-		E01D907E2722794800608E4A /* PokeListRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906C2722794800608E4A /* PokeListRemoteDataSource.swift */; };
-		E01D907F2722794800608E4A /* PokeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906E2722794800608E4A /* PokeListInteractor.swift */; };
-		E01D90802722794800608E4A /* PokeListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90712722794800608E4A /* PokeListResponse.swift */; };
+		E01D90782722794800608E4A /* RepoSearchListUI+SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90632722794800608E4A /* RepoSearchListUI+SearchDelegate.swift */; };
+		E01D90792722794800608E4A /* RepoSearchListUI+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90642722794800608E4A /* RepoSearchListUI+CollectionView.swift */; };
+		E01D907A2722794800608E4A /* RepoSearchListUI+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90652722794800608E4A /* RepoSearchListUI+Display.swift */; };
+		E01D907B2722794800608E4A /* RepoSearchListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90662722794800608E4A /* RepoSearchListUI.swift */; };
+		E01D907C2722794800608E4A /* RepoSearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90682722794800608E4A /* RepoSearchListPresenter.swift */; };
+		E01D907D2722794800608E4A /* RepoSearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906A2722794800608E4A /* RepoSearchListModel.swift */; };
+		E01D907E2722794800608E4A /* SearchRepoListRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906C2722794800608E4A /* SearchRepoListRemoteDataSource.swift */; };
+		E01D907F2722794800608E4A /* RepoSearchListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D906E2722794800608E4A /* RepoSearchListInteractor.swift */; };
+		E01D90802722794800608E4A /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90712722794800608E4A /* RepositoryResponse.swift */; };
 		E01D908227227A3400608E4A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908127227A3400608E4A /* MainCoordinator.swift */; };
 		E01D90992722904300608E4A /* PokeDetailInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90852722904300608E4A /* PokeDetailInjector.swift */; };
 		E01D909A2722904300608E4A /* DetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90882722904300608E4A /* DetailInfoCell.swift */; };
 		E01D909B2722904300608E4A /* RecommendationContinerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90892722904300608E4A /* RecommendationContinerCell.swift */; };
 		E01D909C2722904300608E4A /* DefaultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908A2722904300608E4A /* DefaultHeaderView.swift */; };
 		E01D909D2722904300608E4A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908B2722904300608E4A /* HeaderView.swift */; };
-		E01D909E2722904300608E4A /* PokeDetailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908C2722904300608E4A /* PokeDetailUI.swift */; };
+		E01D909E2722904300608E4A /* RepoDetailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908C2722904300608E4A /* RepoDetailUI.swift */; };
 		E01D909F2722904300608E4A /* LargeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908D2722904300608E4A /* LargeCardView.swift */; };
-		E01D90A02722904300608E4A /* PokeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908F2722904300608E4A /* PokeDetailPresenter.swift */; };
+		E01D90A02722904300608E4A /* RepoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D908F2722904300608E4A /* RepoDetailPresenter.swift */; };
 		E01D90A12722904300608E4A /* PokeDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90912722904300608E4A /* PokeDetailModel.swift */; };
-		E01D90A22722904300608E4A /* PokeDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90932722904300608E4A /* PokeDetailWorker.swift */; };
-		E01D90A32722904300608E4A /* PokeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90952722904300608E4A /* PokeDetailInteractor.swift */; };
+		E01D90A22722904300608E4A /* RepoDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90932722904300608E4A /* RepoDetailWorker.swift */; };
+		E01D90A32722904300608E4A /* RepoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90952722904300608E4A /* RepoDetailInteractor.swift */; };
 		E01D90A42722904300608E4A /* RepoDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90982722904300608E4A /* RepoDetailResponse.swift */; };
 		E01D90A62722A43200608E4A /* UserRepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90A52722A43200608E4A /* UserRepoResponse.swift */; };
 		E01D90A92722D36D00608E4A /* SearchRepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */; };
@@ -76,30 +76,30 @@
 		E01D90472722792700608E4A /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
 		E01D90492722792700608E4A /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E01D904A2722792700608E4A /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		E01D905D2722794800608E4A /* PokeListInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListInjector.swift; sourceTree = "<group>"; };
+		E01D905D2722794800608E4A /* RepoSearchListInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchListInjector.swift; sourceTree = "<group>"; };
 		E01D90602722794800608E4A /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		E01D90612722794800608E4A /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		E01D90632722794800608E4A /* PokeListUI+SearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokeListUI+SearchDelegate.swift"; sourceTree = "<group>"; };
-		E01D90642722794800608E4A /* PokeListUI+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokeListUI+CollectionView.swift"; sourceTree = "<group>"; };
-		E01D90652722794800608E4A /* PokeListUI+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokeListUI+Display.swift"; sourceTree = "<group>"; };
-		E01D90662722794800608E4A /* PokeListUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListUI.swift; sourceTree = "<group>"; };
-		E01D90682722794800608E4A /* PokeListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListPresenter.swift; sourceTree = "<group>"; };
-		E01D906A2722794800608E4A /* PokeListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListModel.swift; sourceTree = "<group>"; };
-		E01D906C2722794800608E4A /* PokeListRemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListRemoteDataSource.swift; sourceTree = "<group>"; };
-		E01D906E2722794800608E4A /* PokeListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListInteractor.swift; sourceTree = "<group>"; };
-		E01D90712722794800608E4A /* PokeListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeListResponse.swift; sourceTree = "<group>"; };
+		E01D90632722794800608E4A /* RepoSearchListUI+SearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoSearchListUI+SearchDelegate.swift"; sourceTree = "<group>"; };
+		E01D90642722794800608E4A /* RepoSearchListUI+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoSearchListUI+CollectionView.swift"; sourceTree = "<group>"; };
+		E01D90652722794800608E4A /* RepoSearchListUI+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoSearchListUI+Display.swift"; sourceTree = "<group>"; };
+		E01D90662722794800608E4A /* RepoSearchListUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchListUI.swift; sourceTree = "<group>"; };
+		E01D90682722794800608E4A /* RepoSearchListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchListPresenter.swift; sourceTree = "<group>"; };
+		E01D906A2722794800608E4A /* RepoSearchListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchListModel.swift; sourceTree = "<group>"; };
+		E01D906C2722794800608E4A /* SearchRepoListRemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRepoListRemoteDataSource.swift; sourceTree = "<group>"; };
+		E01D906E2722794800608E4A /* RepoSearchListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchListInteractor.swift; sourceTree = "<group>"; };
+		E01D90712722794800608E4A /* RepositoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		E01D908127227A3400608E4A /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E01D90852722904300608E4A /* PokeDetailInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailInjector.swift; sourceTree = "<group>"; };
 		E01D90882722904300608E4A /* DetailInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoCell.swift; sourceTree = "<group>"; };
 		E01D90892722904300608E4A /* RecommendationContinerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationContinerCell.swift; sourceTree = "<group>"; };
 		E01D908A2722904300608E4A /* DefaultHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHeaderView.swift; sourceTree = "<group>"; };
 		E01D908B2722904300608E4A /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		E01D908C2722904300608E4A /* PokeDetailUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailUI.swift; sourceTree = "<group>"; };
+		E01D908C2722904300608E4A /* RepoDetailUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailUI.swift; sourceTree = "<group>"; };
 		E01D908D2722904300608E4A /* LargeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeCardView.swift; sourceTree = "<group>"; };
-		E01D908F2722904300608E4A /* PokeDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailPresenter.swift; sourceTree = "<group>"; };
+		E01D908F2722904300608E4A /* RepoDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailPresenter.swift; sourceTree = "<group>"; };
 		E01D90912722904300608E4A /* PokeDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailModel.swift; sourceTree = "<group>"; };
-		E01D90932722904300608E4A /* PokeDetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailWorker.swift; sourceTree = "<group>"; };
-		E01D90952722904300608E4A /* PokeDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailInteractor.swift; sourceTree = "<group>"; };
+		E01D90932722904300608E4A /* RepoDetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailWorker.swift; sourceTree = "<group>"; };
+		E01D90952722904300608E4A /* RepoDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailInteractor.swift; sourceTree = "<group>"; };
 		E01D90982722904300608E4A /* RepoDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailResponse.swift; sourceTree = "<group>"; };
 		E01D90A52722A43200608E4A /* UserRepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoResponse.swift; sourceTree = "<group>"; };
 		E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoResponse.swift; sourceTree = "<group>"; };
@@ -243,7 +243,6 @@
 				E01D905C2722794800608E4A /* Configurator */,
 				E01D905E2722794800608E4A /* Scene */,
 				E01D906F2722794800608E4A /* Data */,
-				E01D90722722794800608E4A /* Domain */,
 			);
 			path = RepoList;
 			sourceTree = "<group>";
@@ -251,7 +250,7 @@
 		E01D905C2722794800608E4A /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
-				E01D905D2722794800608E4A /* PokeListInjector.swift */,
+				E01D905D2722794800608E4A /* RepoSearchListInjector.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -271,10 +270,10 @@
 		E01D905F2722794800608E4A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E01D90622722794800608E4A /* extension */,
 				E01D90602722794800608E4A /* CardCell.swift */,
 				E01D90612722794800608E4A /* FooterView.swift */,
-				E01D90622722794800608E4A /* extension */,
-				E01D90662722794800608E4A /* PokeListUI.swift */,
+				E01D90662722794800608E4A /* RepoSearchListUI.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -282,9 +281,9 @@
 		E01D90622722794800608E4A /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				E01D90632722794800608E4A /* PokeListUI+SearchDelegate.swift */,
-				E01D90642722794800608E4A /* PokeListUI+CollectionView.swift */,
-				E01D90652722794800608E4A /* PokeListUI+Display.swift */,
+				E01D90632722794800608E4A /* RepoSearchListUI+SearchDelegate.swift */,
+				E01D90642722794800608E4A /* RepoSearchListUI+CollectionView.swift */,
+				E01D90652722794800608E4A /* RepoSearchListUI+Display.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -292,7 +291,7 @@
 		E01D90672722794800608E4A /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E01D90682722794800608E4A /* PokeListPresenter.swift */,
+				E01D90682722794800608E4A /* RepoSearchListPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -300,7 +299,7 @@
 		E01D90692722794800608E4A /* model */ = {
 			isa = PBXGroup;
 			children = (
-				E01D906A2722794800608E4A /* PokeListModel.swift */,
+				E01D906A2722794800608E4A /* RepoSearchListModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -308,7 +307,7 @@
 		E01D906B2722794800608E4A /* worker */ = {
 			isa = PBXGroup;
 			children = (
-				E01D906C2722794800608E4A /* PokeListRemoteDataSource.swift */,
+				E01D906C2722794800608E4A /* SearchRepoListRemoteDataSource.swift */,
 			);
 			path = worker;
 			sourceTree = "<group>";
@@ -316,7 +315,7 @@
 		E01D906D2722794800608E4A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				E01D906E2722794800608E4A /* PokeListInteractor.swift */,
+				E01D906E2722794800608E4A /* RepoSearchListInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -332,33 +331,10 @@
 		E01D90702722794800608E4A /* response */ = {
 			isa = PBXGroup;
 			children = (
-				E01D90712722794800608E4A /* PokeListResponse.swift */,
+				E01D90712722794800608E4A /* RepositoryResponse.swift */,
 				E01D90A82722D36D00608E4A /* SearchRepoResponse.swift */,
 			);
 			path = response;
-			sourceTree = "<group>";
-		};
-		E01D90722722794800608E4A /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				E01D90732722794800608E4A /* entity */,
-				E01D90742722794800608E4A /* usecase */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		E01D90732722794800608E4A /* entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = entity;
-			sourceTree = "<group>";
-		};
-		E01D90742722794800608E4A /* usecase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = usecase;
 			sourceTree = "<group>";
 		};
 		E01D90832722904200608E4A /* RepoDetail */ = {
@@ -398,7 +374,7 @@
 				E01D90892722904300608E4A /* RecommendationContinerCell.swift */,
 				E01D908A2722904300608E4A /* DefaultHeaderView.swift */,
 				E01D908B2722904300608E4A /* HeaderView.swift */,
-				E01D908C2722904300608E4A /* PokeDetailUI.swift */,
+				E01D908C2722904300608E4A /* RepoDetailUI.swift */,
 				E01D908D2722904300608E4A /* LargeCardView.swift */,
 			);
 			path = UI;
@@ -407,7 +383,7 @@
 		E01D908E2722904300608E4A /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E01D908F2722904300608E4A /* PokeDetailPresenter.swift */,
+				E01D908F2722904300608E4A /* RepoDetailPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -423,7 +399,7 @@
 		E01D90922722904300608E4A /* worker */ = {
 			isa = PBXGroup;
 			children = (
-				E01D90932722904300608E4A /* PokeDetailWorker.swift */,
+				E01D90932722904300608E4A /* RepoDetailWorker.swift */,
 			);
 			path = worker;
 			sourceTree = "<group>";
@@ -431,7 +407,7 @@
 		E01D90942722904300608E4A /* interactor */ = {
 			isa = PBXGroup;
 			children = (
-				E01D90952722904300608E4A /* PokeDetailInteractor.swift */,
+				E01D90952722904300608E4A /* RepoDetailInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -567,44 +543,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01D907D2722794800608E4A /* PokeListModel.swift in Sources */,
-				E01D907F2722794800608E4A /* PokeListInteractor.swift in Sources */,
+				E01D907D2722794800608E4A /* RepoSearchListModel.swift in Sources */,
+				E01D907F2722794800608E4A /* RepoSearchListInteractor.swift in Sources */,
 				E01D90A92722D36D00608E4A /* SearchRepoResponse.swift in Sources */,
 				E01D90502722792700608E4A /* NetworkManager.swift in Sources */,
-				E01D90792722794800608E4A /* PokeListUI+CollectionView.swift in Sources */,
+				E01D90792722794800608E4A /* RepoSearchListUI+CollectionView.swift in Sources */,
 				E01D909B2722904300608E4A /* RecommendationContinerCell.swift in Sources */,
 				E01D90552722792700608E4A /* BasePresenter.swift in Sources */,
 				E01D904D2722792700608E4A /* Snackbar.swift in Sources */,
-				E01D907B2722794800608E4A /* PokeListUI.swift in Sources */,
+				E01D907B2722794800608E4A /* RepoSearchListUI.swift in Sources */,
 				E01D904F2722792700608E4A /* Environment.swift in Sources */,
 				E01D90A62722A43200608E4A /* UserRepoResponse.swift in Sources */,
 				E01D904B2722792700608E4A /* BaseDisplayLogic.swift in Sources */,
-				E01D909E2722904300608E4A /* PokeDetailUI.swift in Sources */,
-				E01D90752722794800608E4A /* PokeListInjector.swift in Sources */,
-				E01D90782722794800608E4A /* PokeListUI+SearchDelegate.swift in Sources */,
+				E01D909E2722904300608E4A /* RepoDetailUI.swift in Sources */,
+				E01D90752722794800608E4A /* RepoSearchListInjector.swift in Sources */,
+				E01D90782722794800608E4A /* RepoSearchListUI+SearchDelegate.swift in Sources */,
 				E01D90572722792700608E4A /* ApiService.swift in Sources */,
 				E01D908227227A3400608E4A /* MainCoordinator.swift in Sources */,
 				E01D90242722781600608E4A /* AppDelegate.swift in Sources */,
 				E01D90992722904300608E4A /* PokeDetailInjector.swift in Sources */,
-				E01D90A32722904300608E4A /* PokeDetailInteractor.swift in Sources */,
+				E01D90A32722904300608E4A /* RepoDetailInteractor.swift in Sources */,
 				E01D904E2722792700608E4A /* DataError.swift in Sources */,
 				E01D90762722794800608E4A /* CardCell.swift in Sources */,
 				E01D909C2722904300608E4A /* DefaultHeaderView.swift in Sources */,
-				E01D907E2722794800608E4A /* PokeListRemoteDataSource.swift in Sources */,
+				E01D907E2722794800608E4A /* SearchRepoListRemoteDataSource.swift in Sources */,
 				E01D909F2722904300608E4A /* LargeCardView.swift in Sources */,
 				E01D90562722792700608E4A /* ErrorCell.swift in Sources */,
-				E01D90802722794800608E4A /* PokeListResponse.swift in Sources */,
+				E01D90802722794800608E4A /* RepositoryResponse.swift in Sources */,
 				E01D90A42722904300608E4A /* RepoDetailResponse.swift in Sources */,
-				E01D90A02722904300608E4A /* PokeDetailPresenter.swift in Sources */,
+				E01D90A02722904300608E4A /* RepoDetailPresenter.swift in Sources */,
 				E01D909D2722904300608E4A /* HeaderView.swift in Sources */,
 				E01D90A12722904300608E4A /* PokeDetailModel.swift in Sources */,
 				E01D90772722794800608E4A /* FooterView.swift in Sources */,
-				E01D90A22722904300608E4A /* PokeDetailWorker.swift in Sources */,
+				E01D90A22722904300608E4A /* RepoDetailWorker.swift in Sources */,
 				E01D909A2722904300608E4A /* DetailInfoCell.swift in Sources */,
-				E01D907A2722794800608E4A /* PokeListUI+Display.swift in Sources */,
+				E01D907A2722794800608E4A /* RepoSearchListUI+Display.swift in Sources */,
 				E01D90532722792700608E4A /* BaseInteractorLogic.swift in Sources */,
 				E01D90522722792700608E4A /* NDebug.swift in Sources */,
-				E01D907C2722794800608E4A /* PokeListPresenter.swift in Sources */,
+				E01D907C2722794800608E4A /* RepoSearchListPresenter.swift in Sources */,
 				E01D90542722792700608E4A /* UIColor+Extension.swift in Sources */,
 				E01D904C2722792700608E4A /* SceneModule.swift in Sources */,
 				E01D90582722792700608E4A /* CustomNavigationController.swift in Sources */,

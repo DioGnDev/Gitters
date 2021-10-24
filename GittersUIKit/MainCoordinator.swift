@@ -26,13 +26,13 @@ class MainCoodinator: Coordinator {
   }
   
   func start() {
-    let vc = PokeListUI()
+    let vc = RepoSearchListUI()
     vc.coordinator = self
     navigationController.pushViewController(vc, animated: true)
   }
   
   func gotoPokeDetailCard(){
-    let vc = PokeDetailUI()
+    let vc = RepoDetailUI()
     vc.coordinator = self
     navigationController.pushViewController(vc, animated: true)
   }

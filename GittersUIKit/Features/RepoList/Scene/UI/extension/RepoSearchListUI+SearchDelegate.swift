@@ -5,8 +5,6 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
 
 extension RepoSearchListUI: UISearchBarDelegate {
   

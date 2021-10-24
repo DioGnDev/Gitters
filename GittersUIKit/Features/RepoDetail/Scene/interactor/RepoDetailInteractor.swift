@@ -6,7 +6,6 @@
 import Foundation
 
 protocol PokeDetailInteractorLogic: BaseInteractorLogic {
-  func fetchRecommendationCards(user: String, param: RepoSearchListModel.Request?)
   func getErrorState() -> Bool
   func fetchDetailRepo(user: String)
   func getDetailModel() -> RepoDetailModel
@@ -61,28 +60,6 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
         
         DispatchQueue.main.async {
           self.presenter?.presentRepoDetail()
-        }
-        
-      }
-    }
-  }
-
-  func fetchRecommendationCards(user: String, param: RepoSearchListModel.Request?) {
-    isLoading = true
-    
-    worker.fetchUserRepo(user: user) { [weak self] result in
-      switch result {
-      case let .failure(error):
-        self?.isLoading = false
-        self?.isError = true
-        self?.presenter?.presentError(error.description)
-      case let .success(response):
-        guard let self = self else { return }
-        self.isLoading = false
-        self.isError = false
-        self.lists = response
-        DispatchQueue.main.async {
-          self.presenter?.presentRecommendationCards()
         }
         
       }

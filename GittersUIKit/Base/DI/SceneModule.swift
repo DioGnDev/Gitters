@@ -13,7 +13,7 @@ struct SceneModule{
   }
   
   static func provideListWorker() -> PokeListRemoteDataSource {
-    return PokeListRemoteDataSourceImpl(apiService: provideApiService())
+    return RepoSearchListRemoteDataSourceImpl(apiService: provideApiService())
   }
   
   static func provideNetworkManager() -> NetworkManagerProtocol {

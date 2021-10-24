@@ -1,6 +1,4 @@
 //
-//  CardCell.swift
-//  AjaibTest
 //
 //  Created by Ilham Hadi Prabawa on 10/19/21.
 //
@@ -22,6 +20,22 @@ class CardCell: UICollectionViewCell{
       imageView.sd_setImage(with: model.avatarURL, placeholderImage: UIImage(named: ""))
       ownerLabel.text = model.owner
       repoNameLabel.text = model.repo
+      watcherLabel.text = String(describing: model.watcherCount)
+      forkLabel.text = String(describing: model.forkCount)
+      issusLabel.text = String(describing: model.issueCount)
+      
+      if model.watcherCount > 1 {
+        watcherTitleLabel.text = "Watchers"
+      }
+      
+      if model.forkCount > 1 {
+        forkTitleLabel.text = "Forks"
+      }
+      
+      if model.issueCount > 1 {
+        issuesTitleLabel.text = "Issues"
+      }
+      
     }
   }
   

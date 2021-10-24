@@ -9,7 +9,6 @@ import Foundation
 
 protocol RepoDetailPresenterLogic: BasePresenter {
   func presentRepoDetail(model: RepoDetailModel)
-  func presentRecommendationCards()
   func presentRepoDetail()
 }
 
@@ -23,10 +22,6 @@ class RepoDetailPresenter: RepoDetailPresenterLogic {
   
   func presentRepoDetail(model: RepoDetailModel) {
     viewController?.displayRepoDetail(viewModel: model)
-  }
-  
-  func presentRecommendationCards() {
-    viewController?.displayRecommendationCards()
   }
   
   func presentRepoDetail() {

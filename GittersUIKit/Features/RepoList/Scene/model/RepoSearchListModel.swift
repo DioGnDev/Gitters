@@ -82,4 +82,7 @@ struct RepositoryModel {
   let repo: String
   let avatarURL: URL?
   let url: URL?
+  let forkCount: Int
+  let issueCount: Int
+  let watcherCount: Int
 }

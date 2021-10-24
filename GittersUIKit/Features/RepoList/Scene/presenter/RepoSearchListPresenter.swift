@@ -1,6 +1,4 @@
 //
-//  PokeListPresenter.swift
-//  AjaibTest
 //
 //  Created by Ilham Hadi Prabawa on 10/18/21.
 
