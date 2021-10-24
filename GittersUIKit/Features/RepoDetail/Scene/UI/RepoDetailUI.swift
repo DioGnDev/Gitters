@@ -9,9 +9,10 @@ import UIKit
 protocol PokeDetailDisplayLogic: BaseDisplayLogic{
   func displayRepoDetail(viewModel: RepoDetailModel)
   func displayRecommendationCards()
+  func displayRepoDetail()
 }
 
-class PokeDetailUI: UIViewController{
+class RepoDetailUI: UIViewController{
   
   //coordinator
   weak var coordinator: MainCoodinator?
@@ -20,7 +21,7 @@ class PokeDetailUI: UIViewController{
   var interactor: PokeDetailInteractorLogic?
   
   //Request param
-  var param: PokeListModel.Request?
+  var param: RepoSearchListModel.Request?
   
   var didSetupConstraints = false
   
@@ -88,12 +89,12 @@ class PokeDetailUI: UIViewController{
     interactor = nil
     param = nil
     
-    debug("deinit", String(describing: PokeDetailUI.self))
+    debug("deinit", String(describing: RepoDetailUI.self))
   }
   
 }
 
-extension PokeDetailUI: PokeDetailDisplayLogic {
+extension RepoDetailUI: PokeDetailDisplayLogic {
   
   func displayRepoDetail(viewModel: RepoDetailModel) {
     collectionView.reloadData()
@@ -110,9 +111,13 @@ extension PokeDetailUI: PokeDetailDisplayLogic {
     collectionView.reloadData()
   }
   
+  func displayRepoDetail() {
+    collectionView.reloadData()
+  }
+  
 }
 
-extension PokeDetailUI: UICollectionViewDataSource {
+extension RepoDetailUI: UICollectionViewDataSource {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 2
@@ -215,7 +220,7 @@ extension PokeDetailUI: UICollectionViewDataSource {
   }
 }
 
-extension PokeDetailUI :UICollectionViewDelegateFlowLayout {
+extension RepoDetailUI :UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
@@ -234,17 +239,4 @@ extension PokeDetailUI :UICollectionViewDelegateFlowLayout {
                       insetForSectionAt section: Int) -> UIEdgeInsets {
     return .init(top: 0, left: 0, bottom: 16, right: 0)
   }
-}
-
-extension PokeDetailUI: RecommendationDelegate {
-  
-  func loadMore() {
-    guard let interactor = interactor,
-          var param = param
-    else { return }
-    param.page = interactor.getPage() + 1
-    interactor.loadMoreRecommendationCards(param: param)
-    
-  }
-  
 }

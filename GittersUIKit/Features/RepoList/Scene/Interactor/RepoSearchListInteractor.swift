@@ -4,17 +4,15 @@
 
 import Foundation
 
-protocol PokeListInteractorLogic: BaseInteractorLogic {
-  func fetchPokeList(param: PokeListModel.Request?)
-  func loadMorePokeList(param: PokeListModel.Request)
+protocol RepoSearchListInteractorLogic: BaseInteractorLogic {
+  func searchRepoList(param: RepoSearchListModel.Request?)
   func getLists() -> [RepositoryModel]
   func hasError() -> Bool
-  func filterCards(searchText: String)
   func isLoadingState() -> Bool
   func removeData()
 }
 
-class PokeListInteractor: PokeListInteractorLogic {
+class PokeListInteractor: RepoSearchListInteractorLogic {
   
   var currentPage: Int = 0
   var count: Int = 0
@@ -25,17 +23,17 @@ class PokeListInteractor: PokeListInteractorLogic {
   var searchText = ""
   
   //presenter
-  var presenter: PokeListPresenterLogic?
+  var presenter: RepoSearchListPresenterLogic?
   let worker: PokeListRemoteDataSource
   
-  init(worker: PokeListRemoteDataSource, presenter: PokeListPresenterLogic?) {
+  init(worker: PokeListRemoteDataSource, presenter: RepoSearchListPresenterLogic?) {
     self.worker = worker
     self.presenter = presenter
   }
   
-  func fetchPokeList(param: PokeListModel.Request?) {
+  func searchRepoList(param: RepoSearchListModel.Request?) {
     isLoading = true
-    worker.fetchPokeList(param: param?.toParam() ?? [:]) { [weak self] result in
+    worker.sarchRepoList(param: param?.toParam() ?? [:]) { [weak self] result in
       switch result {
       case let .failure(error):
         self?.isLoading = false
@@ -52,10 +50,6 @@ class PokeListInteractor: PokeListInteractorLogic {
         
       }
     }
-  }
-  
-  func loadMorePokeList(param: PokeListModel.Request) {
-    
   }
 
   func isLoadingState() -> Bool {
@@ -76,12 +70,6 @@ class PokeListInteractor: PokeListInteractorLogic {
   
   func hasError() -> Bool {
     return isError
-  }
-  
-  func filterCards(searchText: String) {
-    self.searchText = searchText
-    filteredItems = self.lists.filter{ $0.repo.lowercased().contains(searchText.lowercased()) }
-    presenter?.presentPokeList()
   }
   
   func removeData() {

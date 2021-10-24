@@ -6,8 +6,7 @@
 import Foundation
 
 protocol PokeDetailInteractorLogic: BaseInteractorLogic {
-  func fetchRecommendationCards(user: String, param: PokeListModel.Request?)
-  func loadMoreRecommendationCards(param:  PokeListModel.Request)
+  func fetchRecommendationCards(user: String, param: RepoSearchListModel.Request?)
   func getErrorState() -> Bool
   func fetchDetailRepo(user: String)
   func getDetailModel() -> RepoDetailModel
@@ -17,10 +16,10 @@ protocol PokeDetailInteractorLogic: BaseInteractorLogic {
 class PokeDetailInteractor: PokeDetailInteractorLogic {
   
   //presenter
-  var presenter: PokeDetailPresenterLogic?
+  var presenter: RepoDetailPresenterLogic?
   
   //worker
-  let worker: PokeDetailtRemoteDataSource
+  let worker: RepoDetailtRemoteDataSource
   let listWorker: PokeListRemoteDataSource
   
   //state
@@ -37,7 +36,7 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
   private(set) var isLoading = false
   private(set) var isError = false
   
-  init(worker: PokeDetailtRemoteDataSource, listWorker: PokeListRemoteDataSource) {
+  init(worker: RepoDetailtRemoteDataSource, listWorker: PokeListRemoteDataSource) {
     self.worker = worker
     self.listWorker = listWorker
   }
@@ -55,16 +54,20 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
         guard let self = self else { return }
         self.isLoading = false
         self.isError = false
-        self.model = response
+
+        let (detail, repos) = response
+        self.model = detail
+        self.lists = repos
+        
         DispatchQueue.main.async {
-          self.presenter?.presentRepoDetail(model: response)
+          self.presenter?.presentRepoDetail()
         }
         
       }
     }
   }
 
-  func fetchRecommendationCards(user: String, param: PokeListModel.Request?) {
+  func fetchRecommendationCards(user: String, param: RepoSearchListModel.Request?) {
     isLoading = true
     
     worker.fetchUserRepo(user: user) { [weak self] result in
@@ -84,33 +87,6 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
         
       }
     }
-  }
-  
-  func loadMoreRecommendationCards(param: PokeListModel.Request) {
-    
-    if !isLoading {
-      
-      isLoading = true
-      listWorker.fetchPokeList(param: param.toParam()) { [weak self] result in
-        switch result {
-        case let .failure(error):
-          self?.isLoading = false
-          self?.isError = true
-          self?.presenter?.presentError(error.description)
-        case let .success(response):
-          guard let self = self else { return }
-          self.isLoading = false
-          self.isError = false
-          
-          DispatchQueue.main.async {
-            self.presenter?.presentRecommendationCards()
-          }
-          
-        }
-      }
-      
-    }
-    
   }
   
   func getDetailModel() -> RepoDetailModel{

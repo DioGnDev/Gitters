@@ -9,13 +9,13 @@ import Alamofire
 
 protocol PokeListRemoteDataSource {
   
-  func fetchPokeList(param: [String: Any],
+  func sarchRepoList(param: [String: Any],
                      completion: @escaping(Result<[RepositoryModel], NError>) -> Void)
   
   
 }
 
-class PokeListRemoteDataSourceImpl: PokeListRemoteDataSource{
+class RepoSearchListRemoteDataSourceImpl: PokeListRemoteDataSource{
   
   let apiService: ApiService
   
@@ -23,7 +23,7 @@ class PokeListRemoteDataSourceImpl: PokeListRemoteDataSource{
     self.apiService = apiService
   }
   
-  func fetchPokeList(param: [String : Any],
+  func sarchRepoList(param: [String : Any],
                      completion: @escaping (Result<[RepositoryModel], NError>) -> Void) {
     
     apiService.request(of: SearchRepoResponse.self, with: "search/repositories", withParameter: param) { result in

@@ -14,7 +14,7 @@ protocol RepoListDisplayLogic: BaseDisplayLogic{
   func displayPokeList()
 }
 
-class PokeListUI: UIViewController{
+class RepoSearchListUI: UIViewController{
   
   //coordinator
   weak var coordinator: MainCoodinator?
@@ -135,7 +135,7 @@ class PokeListUI: UIViewController{
   }
   
   deinit{
-    debug("deinit", String(describing: PokeListUI.self))
+    debug("deinit", String(describing: RepoSearchListUI.self))
   }
   
 }

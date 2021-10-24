@@ -12,7 +12,7 @@ enum Sort: String{
   case asc = "asc"
 }
 
-enum PokeListModel{
+enum RepoSearchListModel{
   
   struct Request{
     

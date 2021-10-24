@@ -1,5 +1,4 @@
 //
-//  PokeListUI+SearchDelegate.swift
 //
 //  Created by Ilham Hadi Prabawa on 10/20/21.
 //
@@ -9,10 +8,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension PokeListUI: UISearchBarDelegate {
+extension RepoSearchListUI: UISearchBarDelegate {
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //    interactor?.filterCards(searchText: searchText)
     pendingRequestWorkItem?.cancel()
     
     // Wrap our request in a work item
@@ -24,7 +22,7 @@ extension PokeListUI: UISearchBarDelegate {
       }
       
       self?.param.query = searchText
-      self?.interactor?.fetchPokeList(param: self?.param)
+      self?.interactor?.searchRepoList(param: self?.param)
     }
     
     // Save the new work item and execute it after 200 ms
@@ -33,7 +31,4 @@ extension PokeListUI: UISearchBarDelegate {
                                   execute: requestWorkItem)
   }
   
-  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    //    interactor?.filterCards(searchText: "")
-  }
 }

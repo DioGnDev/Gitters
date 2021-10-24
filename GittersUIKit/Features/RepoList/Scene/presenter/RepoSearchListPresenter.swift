@@ -6,11 +6,11 @@
 
 import Foundation
 
-protocol PokeListPresenterLogic: BasePresenter {
+protocol RepoSearchListPresenterLogic: BasePresenter {
   func presentPokeList()
 }
 
-class PokeListPresenter: PokeListPresenterLogic {
+class RepoSearchListPresenter: RepoSearchListPresenterLogic {
   
   weak var viewController: RepoListDisplayLogic?
   

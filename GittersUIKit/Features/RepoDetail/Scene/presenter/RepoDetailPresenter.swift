@@ -7,14 +7,15 @@ import Foundation
 
 import Foundation
 
-protocol PokeDetailPresenterLogic: BasePresenter {
+protocol RepoDetailPresenterLogic: BasePresenter {
   func presentRepoDetail(model: RepoDetailModel)
   func presentRecommendationCards()
+  func presentRepoDetail()
 }
 
-class PokeDetailPresenter: PokeDetailPresenterLogic {
+class RepoDetailPresenter: RepoDetailPresenterLogic {
   
-  weak var viewController: PokeDetailDisplayLogic?
+  weak var viewController: RepoDetailDisplayLogic?
   
   func presentError(_ errorMessage: String?) {
     viewController?.displayError(errorMessage)
@@ -26,6 +27,10 @@ class PokeDetailPresenter: PokeDetailPresenterLogic {
   
   func presentRecommendationCards() {
     viewController?.displayRecommendationCards()
+  }
+  
+  func presentRepoDetail() {
+    viewController?.displayRepoDetail()
   }
 
 }

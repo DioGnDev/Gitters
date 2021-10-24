@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension PokeListUI: RepoListDisplayLogic {
+extension RepoSearchListUI: RepoListDisplayLogic {
   
   func displayPokeList(){
     loadingIndicator.stopAnimating()

@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-extension PokeListUI: UICollectionViewDataSource {
+extension RepoSearchListUI: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     guard let interactor = interactor else { return 0 }
@@ -22,9 +22,6 @@ extension PokeListUI: UICollectionViewDataSource {
       cell.data = ErrorData(imageName: "octo",
                             title: "Search",
                             message: "searching repository")
-      cell.tapAction = { [unowned self] in
-        self.interactor?.fetchPokeList(param: nil)
-      }
       return cell
     }else {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell,
@@ -68,7 +65,7 @@ extension PokeListUI: UICollectionViewDataSource {
   
 }
 
-extension PokeListUI: UICollectionViewDelegate {
+extension RepoSearchListUI: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     collectionView.deselectItem(at: indexPath, animated: false)
@@ -81,27 +78,10 @@ extension PokeListUI: UICollectionViewDelegate {
     }
     
   }
-  
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let offsetY = scrollView.contentOffset.y
-    let bottom = scrollView.contentSize.height - scrollView.frame.size.height
-    if offsetY > bottom {
-      
-      loadingIndicator.startAnimating()
-      
-      //load more cards
-      guard let interactor = interactor else {
-        return
-      }
-      var param = PokeListModel.Request(pageSize: 10)
-      param.page = interactor.getPage() + 1
-      interactor.loadMorePokeList(param: param)
-    }
-  }
-  
+
 }
 
-extension PokeListUI: UICollectionViewDelegateFlowLayout {
+extension RepoSearchListUI: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
