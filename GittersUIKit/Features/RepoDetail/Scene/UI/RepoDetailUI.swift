@@ -31,7 +31,7 @@ class RepoDetailUI: UIViewController{
   //MARK: - View
   
   lazy var collectionView: UICollectionView = {
-    let layout = UICollectionViewFlowLayout()
+    let layout = StrechyHeaderLayout()
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
     cv.delegate = self
     cv.dataSource = self
@@ -52,7 +52,7 @@ class RepoDetailUI: UIViewController{
   
   init() {
     super.init(nibName: nil, bundle: nil)
-    PokeDetailInjector.inject(dependencyFor: self)
+    RepoDetailInjector.inject(dependencyFor: self)
   }
   
   required init?(coder: NSCoder) {

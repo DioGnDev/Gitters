@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PokeDetailInjector{
+struct RepoDetailInjector{
   
   static func inject(dependencyFor viewController: RepoDetailUI) {
     

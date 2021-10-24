@@ -20,12 +20,12 @@ class DetailInfoCell: UICollectionViewCell {
       subtypeLabel.text = item.company
       flavorLabel.text = item.blog
       
-      let attributedString = NSMutableAttributedString(string: "Twitter:", attributes: [
-        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
-        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
-      ])
-
-      attributedString.addAttribute(.link, value: item.blog, range: NSRange())
+//      let attributedString = NSMutableAttributedString(string: "Twitter:", attributes: [
+//        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20),
+//        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
+//      ])
+//
+//      attributedString.addAttribute(.link, value: item.blog, range: NSRange())
 //      attributedString.append(NSAttributedString(string: "\n\"\(item.blog)\"", attributes: [
 //        NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 16),
 //        NSAttributedString.Key.foregroundColor: UIColor.white.cgColor
@@ -47,6 +47,7 @@ class DetailInfoCell: UICollectionViewCell {
     let label = UILabel()
     label.textColor = .white
     label.font = UIFont.systemFont(ofSize: 16)
+    label.numberOfLines = 0
     return label
   }()
   
@@ -102,6 +103,7 @@ class DetailInfoCell: UICollectionViewCell {
         make.top.equalTo(attackLabel.snp.bottom).inset(-3)
         make.leading.equalTo(self).inset(16)
         make.trailing.equalTo(self).inset(16)
+        make.bottom.equalTo(flavorLabel.snp.top).inset(-8)
       }
       
       flavorLabel.snp.makeConstraints { make in
