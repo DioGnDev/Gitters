@@ -10,6 +10,7 @@ import Foundation
 protocol RepoDetailPresenterLogic: BasePresenter {
   func presentRepoDetail(model: RepoDetailModel)
   func presentRepoDetail()
+  func presentLoading(_ state: Bool)
 }
 
 class RepoDetailPresenter: RepoDetailPresenterLogic {
@@ -26,6 +27,10 @@ class RepoDetailPresenter: RepoDetailPresenterLogic {
   
   func presentRepoDetail() {
     viewController?.displayRepoDetail()
+  }
+  
+  func presentLoading(_ state: Bool) {
+    viewController?.shouldDisplayProgress(state)
   }
 
 }

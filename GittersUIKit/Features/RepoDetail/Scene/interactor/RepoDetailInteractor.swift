@@ -41,26 +41,26 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
   }
   
   func fetchDetailRepo(user: String) {
+    
+    presenter?.presentLoading(true)
+    
     worker.fetchRepoDetail(id: user) { [weak self] result in
       switch result {
       case let .failure(error):
         self?.isLoading = false
         self?.isError = true
-        DispatchQueue.main.async {
-          self?.presenter?.presentError(error.description)
-        }
+        self?.presenter?.presentLoading(false)
+        self?.presenter?.presentError(error.description)
       case let .success(response):
         guard let self = self else { return }
         self.isLoading = false
         self.isError = false
-
+        
         let (detail, repos) = response
         self.model = detail
         self.lists = repos
-        
-        DispatchQueue.main.async {
-          self.presenter?.presentRepoDetail()
-        }
+        self.presenter?.presentLoading(false)
+        self.presenter?.presentRepoDetail()
         
       }
     }
@@ -77,7 +77,7 @@ class PokeDetailInteractor: PokeDetailInteractorLogic {
   func getCount() -> Int {
     return self.count
   }
-
+  
   func getErrorState() -> Bool {
     return isError
   }

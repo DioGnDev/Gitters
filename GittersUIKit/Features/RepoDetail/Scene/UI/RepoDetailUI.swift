@@ -5,10 +5,14 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 protocol RepoDetailDisplayLogic: BaseDisplayLogic{
   func displayRepoDetail(viewModel: RepoDetailModel)
   func displayRepoDetail()
+  func showProgress()
+  func hideProgress()
+  func shouldDisplayProgress(_ state: Bool)
 }
 
 class RepoDetailUI: UIViewController{
@@ -66,6 +70,9 @@ class RepoDetailUI: UIViewController{
     
     view.addSubview(collectionView)
     view.setNeedsUpdateConstraints()
+    
+    //show progress
+    showProgress()
   }
   
   override func updateViewConstraints() {
@@ -95,6 +102,11 @@ class RepoDetailUI: UIViewController{
 
 extension RepoDetailUI: RepoDetailDisplayLogic {
   
+  func shouldDisplayProgress(_ state: Bool) {
+    state == true ? showProgress() : hideProgress()
+  }
+  
+  
   func displayRepoDetail(viewModel: RepoDetailModel) {
     collectionView.reloadData()
   }
@@ -106,6 +118,16 @@ extension RepoDetailUI: RepoDetailDisplayLogic {
   
   func displayRepoDetail() {
     collectionView.reloadData()
+  }
+  
+  func showProgress() {
+    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+    hud.mode = .indeterminate
+    hud.label.text = "Please wait..."
+  }
+  
+  func hideProgress() {
+    MBProgressHUD.hide(for: self.view, animated: true)
   }
   
 }
@@ -157,7 +179,7 @@ extension RepoDetailUI: UICollectionViewDataSource {
                                                                        withReuseIdentifier: HeaderView.identidier,
                                                                        for: indexPath) as? HeaderView
       else { return  UICollectionReusableView() }
-  
+      
       view.avatar = interactor?.getDetailModel().avatar
       
       return view

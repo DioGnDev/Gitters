@@ -16,33 +16,32 @@ class RepoDetailRemoteDataSourceImpl: RepoDetailtRemoteDataSource{
   
   let apiService: ApiService
   
-  var model = RepoDetailModel(name: "",
-                              avatar: URL(string: ""),
-                              repoURL: "",
-                              company: "",
-                              location: "",
-                              blog: "",
-                              cratedAt: "")
-  
-  var repositories: [RepositoryModel] = []
-  
-  var detailError: NError? = nil
-  var repoError: NError? = nil
-  
   init(apiService: ApiService) {
     self.apiService = apiService
   }
   
   func fetchRepoDetail(id: String, completion: @escaping (Result<(RepoDetailModel, [RepositoryModel]), NError>) -> Void) {
+    
+    var model = RepoDetailModel(name: "",
+                                avatar: URL(string: ""),
+                                repoURL: "",
+                                company: "",
+                                location: "",
+                                blog: "",
+                                cratedAt: "")
+    var repositories: [RepositoryModel] = []
+    var detailError: NError? = nil
+    var repoError: NError? = nil
+    
     let group = DispatchGroup()
     
     group.enter()
     apiService.request(of: RepoDetailResponse.self, with: "users/\(id)") { result in
       switch result {
       case .failure(let error):
-        self.detailError = error
+        detailError = error
       case .success(let response):
-        self.model = RepoDetailModel(name: response.name ?? "",
+        model = RepoDetailModel(name: response.name ?? "",
                                      avatar: URL(string: response.avatarURL ?? ""),
                                      repoURL: response.reposURL ?? "",
                                      company: response.company ?? "",
@@ -59,10 +58,10 @@ class RepoDetailRemoteDataSourceImpl: RepoDetailtRemoteDataSource{
     apiService.request(of: UserRepoResponse.self, with: "users/\(id)/repos") { result in
       switch result {
       case .failure(let error):
-        self.repoError = error
+        repoError = error
         break
       case .success(let response):
-        self.repositories = response.map{ RepositoryModel(id: $0.id ?? 0,
+       repositories = response.map{ RepositoryModel(id: $0.id ?? 0,
                                                           owner: $0.owner?.login ?? "",
                                                           repo: $0.fullName ?? "",
                                                           avatarURL: URL(string: $0.owner?.avatarURL ?? ""),
@@ -77,18 +76,24 @@ class RepoDetailRemoteDataSourceImpl: RepoDetailtRemoteDataSource{
     
     group.notify(queue: DispatchQueue.global()) {
       
-      if let detailError = self.detailError {
-        completion(.failure(detailError))
+      if let detailError = detailError {
+        DispatchQueue.main.async {
+          completion(.failure(detailError))
+        }
         return
       }
       
-      if let repoError = self.repoError {
-        completion(.failure(repoError))
+      if let repoError = repoError {
+        DispatchQueue.main.async {
+          completion(.failure(repoError))
+        }
         return
       }
       
-      let result = (self.model, self.repositories)
-      completion(.success(result))
+      DispatchQueue.main.async {
+        let result = (model, repositories)
+        completion(.success(result))
+      }
       
     }
     
