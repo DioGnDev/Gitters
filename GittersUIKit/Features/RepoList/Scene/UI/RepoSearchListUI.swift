@@ -1,5 +1,4 @@
-//
-//
+
 //  Created by Ilham Hadi Prabawa on 10/18/21.
 
 
@@ -7,9 +6,13 @@ import Foundation
 import UIKit
 import SnapKit
 import Alamofire
+import MBProgressHUD
 
 protocol RepoListDisplayLogic: BaseDisplayLogic{
   func displayPokeList()
+  func showProgress()
+  func hideProgress()
+  func shouldShowProgress(_ state: Bool)
 }
 
 class RepoSearchListUI: UIViewController{
@@ -29,6 +32,13 @@ class RepoSearchListUI: UIViewController{
   
   let snackbar = Snackbar()
   
+//  let progressHUD: MBProgressHUD = {
+//    let hud = MBProgressHUD()
+//    hud.mode = .indeterminate
+//    hud.label.text = "Loading..."
+//    return hud
+//  }()
+  
   var pendingRequestWorkItem: DispatchWorkItem?
   
   lazy var collectionView: UICollectionView = {
@@ -39,19 +49,8 @@ class RepoSearchListUI: UIViewController{
     cv.backgroundColor = .backgroudColor
     cv.showsVerticalScrollIndicator = false
     cv.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
-//    cv.register(FooterView.self,
-//                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-//                withReuseIdentifier: FooterView.identifier)
     cv.register(ErrorCell.self, forCellWithReuseIdentifier: ErrorCell.identifier)
-    //    cv.refreshControl = refreshControl
     return cv
-  }()
-  
-  lazy var refreshControl: UIRefreshControl = {
-    let rc = UIRefreshControl()
-    rc.tintColor = .white
-    rc.addTarget(self, action: #selector(paginateMore), for: .valueChanged)
-    return rc
   }()
   
   var loadingIndicator: UIActivityIndicatorView = {
@@ -68,11 +67,6 @@ class RepoSearchListUI: UIViewController{
     searchBar.placeholder = "Search Repository"
     return searchBar
   }()
-  
-  @objc
-  func paginateMore() {
-    refreshControl.beginRefreshing()
-  }
   
   init() {
     super.init(nibName: nil, bundle: nil)
@@ -130,6 +124,20 @@ class RepoSearchListUI: UIViewController{
     }
     
     super.updateViewConstraints()
+  }
+  
+  func showProgress() {
+    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+    hud.mode = .indeterminate
+    hud.label.text = "Please wait..."
+  }
+  
+  func hideProgress() {
+    MBProgressHUD.hide(for: self.view, animated: true)
+  }
+  
+  func shouldShowProgress(_ state: Bool) {
+    state ? showProgress() : hideProgress()
   }
   
   deinit{

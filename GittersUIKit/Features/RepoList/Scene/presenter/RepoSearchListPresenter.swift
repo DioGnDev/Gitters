@@ -6,6 +6,7 @@ import Foundation
 
 protocol RepoSearchListPresenterLogic: BasePresenter {
   func presentPokeList()
+  func presentLoading(_ state: Bool)
 }
 
 class RepoSearchListPresenter: RepoSearchListPresenterLogic {
@@ -22,6 +23,10 @@ class RepoSearchListPresenter: RepoSearchListPresenterLogic {
   
   func presentError(_ errorMessage: String?) {
     viewController?.displayError(errorMessage)
+  }
+  
+  func presentLoading(_ state: Bool) {
+    viewController?.shouldShowProgress(state)
   }
   
 }

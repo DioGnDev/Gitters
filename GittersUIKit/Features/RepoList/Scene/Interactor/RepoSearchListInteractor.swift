@@ -33,14 +33,17 @@ class PokeListInteractor: RepoSearchListInteractorLogic {
   
   func searchRepoList(param: RepoSearchListModel.Request?) {
     isLoading = true
+    presenter?.presentLoading(true)
     worker.sarchRepoList(param: param?.toParam() ?? [:]) { [weak self] result in
       switch result {
       case let .failure(error):
+        self?.presenter?.presentLoading(false)
         self?.isLoading = false
         self?.isError = true
         self?.presenter?.presentError(error.description)
       case let .success(response):
         guard let self = self else { return }
+        self.presenter?.presentLoading(false)
         self.isLoading = false
         self.lists = response
         

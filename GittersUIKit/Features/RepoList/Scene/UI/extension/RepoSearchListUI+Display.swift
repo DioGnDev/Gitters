@@ -13,7 +13,6 @@ extension RepoSearchListUI: RepoListDisplayLogic {
   func displayPokeList(){
     loadingIndicator.stopAnimating()
     collectionView.reloadData()
-    refreshControl.endRefreshing()
   }
   
   func displayError(_ errorMessage: String?) {
